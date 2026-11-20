@@ -1,0 +1,10 @@
+ENADE Big Data II — RF04: verificacao de midias e geracao de galeria offline
+
+1. Copie o pacote na branch feat/rf04-visuais-2023 do repositorio Git.
+2. Execute py -m pytest -q.
+3. Execute py .\scripts\preparar_visuais_rf04.py --base $dados
+   com $dados apontando para a pasta original ENADE BigData II Projeto.
+4. Abra data\visuais_rf04\galeria.html no computador e confira os oito casos.
+5. Para a semantica: tabelas/gráficos ainda exigem tratamento e validacao separados.
+
+Nunca modifica CSV humano, JSONL originais, PDFs, Kafka ou Elasticsearch.
