@@ -73,7 +73,7 @@ $('al').disabled=r.tipo==='discursiva';let w=[];if(r.tipo==='objetiva'&&r.altern
 if((r.alertas||[]).includes('figuras_para_conferencia_visual'))w.push('Há elementos visuais associados: confira o PDF.');
 $('aviso').replaceChildren();if(w.length){let a=document.createElement('div');a.className='warn';a.textContent=w.join(' ');$('aviso').append(a)}$('status').textContent='';imagem();refrescarMenu()}
 function imagem(){let r=rows[idx];$('pagina').textContent=`Página ${numPagina}`;$('imagem').src=`/api/page?id=${encodeURIComponent(r.id)}&p=${numPagina}`}
-function pageDelta(n){numPagina=Math.max(1,numPagina+n);imagem()}
+function pageDelta(n){numPagina=Math.max(1,Number(numPagina)+n);imagem()}
 async function salvar(){let r=rows[idx];let data={id:r.id,enunciado_correto_1_ou_0:$('en').value,alternativas_corretas_1_ou_0:r.tipo==='discursiva'?'':$('al').value,tipo_correto_1_ou_0:$('tipo').value,observacoes:$('obs').value};
 $('salvar').disabled=true;try{let res=await fetch('/api/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});let x=await res.json();if(!res.ok)throw new Error(x.error||'Erro');Object.assign(r,data);$('status').textContent='✓ Avaliação salva em evidencias/A3_revisao_manual.csv';refrescarMenu();return true}catch(e){$('status').textContent='ERRO ao salvar: '+e.message;return false}finally{$('salvar').disabled=false}}
 async function mover(n){if(await salvar())mostrar(Math.min(rows.length-1,idx+n))}

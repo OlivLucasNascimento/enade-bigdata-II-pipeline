@@ -1,0 +1,19 @@
+ENADE — Fechamento de auditoria A3 (50 questões de 2023)
+
+1. Coloque os arquivos scripts/consolidar_auditoria_a3.py,
+   scripts/resumir_revisao_a3.py e tests/test_consolidar_auditoria_a3.py no projeto Git.
+2. Os dados e o CSV precisam estar na pasta original 'ENADE BigData II Projeto'.
+3. Execute na pasta Git:
+   py -m pytest -q
+   py .\scripts\resumir_revisao_a3.py --base "..\ENADE BigData II Projeto"
+   py .\scripts\consolidar_auditoria_a3.py --base "..\ENADE BigData II Projeto"
+   py .\scripts\consolidar_auditoria_a3.py --base "..\ENADE BigData II Projeto" --corrigir-rascunhos
+
+Arquivos gerados na pasta original:
+- evidencias/A3_relatorio_auditoria_50.json
+- data/extraidos_auditados_2023/questoes.jsonl
+
+NÃO escreve sobre PDF/CSV ou JSONL original, NÃO publica no Kafka/Elasticsearch.
+A correção automática só remove blocos de RASCUNHO numerados e finais;
+se encontrar formato inesperado interrompe sem modificar os dados.
+Os demais 8 problemas visuais permanecem pendentes para revisão semântica.
