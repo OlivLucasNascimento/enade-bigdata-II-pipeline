@@ -1,3 +1,5 @@
+> **Documento historico:** retrata a primeira etapa do pipeline. Para resultados finais da indexacao, consulte o README e docs/INDEXACAO_V4_RF04.md.
+
 # Status verificável — Big Data II / ENADE (primeira parte)
 
 ## Concluído no ambiente Windows do projeto (saídas fornecidas pelo integrante)

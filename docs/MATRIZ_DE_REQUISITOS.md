@@ -1,5 +1,6 @@
 # Matriz de requisitos e responsáveis
 
+> **Atualizacao de 20/11/2026:** os estados abaixo pertencem a matriz original de planejamento. Nao representam o status atual de cada requisito. Consulte o resumo atualizado no README e as evidencias v4. O RF22 atribui provisao ao Integrante 1 e integracao/testes ao Integrante 2; a autenticacao real continua pendente.
 **Fonte:** itens 03 e 04 do PDF, páginas 2 a 4. **Legenda:** I1 = Integrante 1; I2 = Integrante 2. Todos os estados iniciais: ☐ Pendente. A documentação de segurança tem responsabilidade compartilhada, mas as mudanças de código acontecem sequencialmente.
 
 | ID | Requisito resumido fiel ao enunciado | Dono | Evidência/teste esperado | Estado |
