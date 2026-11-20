@@ -4,6 +4,31 @@ Projeto acadêmico de **coleta rastreável de documentos públicos do ENADE**, e
 
 > **Estado:** protótipo técnico em andamento. A aprovação editorial humana, a cobertura integral do acervo e a autenticação Kerberos **não estão concluídas**. A configuração Docker é **somente para uso local**, sem autenticação de produção.
 
+## Situacao atual - 20/11/2026
+
+**Entrega tecnica de ingestao e indexacao v4 validada no laboratorio local.**
+
+- 103 testes automatizados aprovados (1 aviso de dependencia).
+- 280 questoes indexadas em `enade-questoes-v4`: 80 de 2017, 120 de 2021 e 80 de 2023.
+- 280 eventos Kafka confirmados; zero mensagens enviadas a DLQ na execucao v4.
+- Zero IDs faltantes e comparacao integral dos documentos aprovada.
+- Indices v1, v2 e v3 preservados.
+- Auditoria humana de 50 questoes concluida: 40/50 enunciados corretos na avaliacao original, 48/48 alternativas aplicaveis corretas e 50/50 classificacoes corretas.
+- Oito representacoes visuais RF04 aprovadas em nova conferencia.
+- Dois blocos de rascunho removidos nas copias derivadas.
+- Testes locais de retomada, reprocessamento e DLQ registrados.
+
+**Limites:** a aprovacao das oito representacoes nao certifica todo o acervo. A coleta integral, revisao editorial de 2017/2021, disponibilizacao de imagens a API e autenticacao Kerberos/LDAP ainda exigem trabalho da equipe. O laboratorio nao deve ser exposto publicamente.
+
+**Evidencias principais:**
+- `docs/INDEXACAO_V4_RF04.md`
+- `evidencias/A4_v4_verificacao.json`
+- `evidencias/A3_rf04_aprovacao_editorial_8.json`
+- `evidencias/A3_revisao_manual.csv`
+- `evidencias/A5_rf11_v3_dlq.json`
+
+As secoes de v2 e v3 abaixo descrevem etapas historicas, anteriores a v4.
+
 ## Estrutura
 
 | Pasta ou arquivo | Função |
@@ -52,7 +77,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\validar-e-reindexar-v2.ps1 -R
 
 Para os passos detalhados e as restrições do laboratório, consulte `docs/` e a **matriz de requisitos** em `docs/MATRIZ_DE_REQUISITOS.md`. A inicialização do Kafka e de tópicos auxiliares depende do cenário; use os scripts documentados em `scripts/`.
 
-## Resultados de execução registrados (20/11/2026)
+## Resultados historicos da etapa inicial (v2)
 
 | Etapa | Resultado observado |
 |---|---|
@@ -80,7 +105,7 @@ Os manifestos locais registram URLs oficiais, arquivos, SHA-256 e status dos dow
 
 Este repositório não inclui os PDFs públicos originais. Consulte os links catalogados a partir da [página oficial de provas e gabaritos do INEP](https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade/provas-e-gabaritos).
 
-## Atualizacao: indexacao v3
+## Historico: indexacao v3
 
 A integracao tecnica do ENADE foi ampliada para 280 questoes:
 - 2017: 80 questoes.
