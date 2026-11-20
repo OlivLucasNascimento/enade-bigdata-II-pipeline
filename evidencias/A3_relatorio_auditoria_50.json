@@ -1,0 +1,129 @@
+{
+  "status": "AUDITORIA_HUMANA_REGISTRADA_PENDENCIAS",
+  "total_avaliados": 50,
+  "ids_unicos": 50,
+  "fonte_csv": "evidencias\\A3_revisao_manual.csv",
+  "sha256_csv": "c8ca6b3d926e3a5e5be1478cc24ab2b71fd2cc200946b21acfe6a5829ccf92fe",
+  "fonte_jsonl": "data\\extraidos\\questoes_com_midias.jsonl",
+  "sha256_jsonl": "e5025350ea9b39d54346fe794d71a8c84e3600537b4754042f5114cd257fdd4a",
+  "metricas": {
+    "enunciado": {
+      "aprovados": 40,
+      "avaliados": 50
+    },
+    "alternativas": {
+      "aprovados": 48,
+      "avaliados": 48,
+      "nao_aplicavel": 2
+    },
+    "tipo": {
+      "aprovados": 50,
+      "avaliados": 50
+    }
+  },
+  "problemas_total": 10,
+  "rascunhos_identificados": 2,
+  "visuais_ou_outros_identificados": 8,
+  "problemas": [
+    {
+      "id": "d362658b889b4c9c5020dbab629c62f985f8dee474bd60b4daafc3ff21f7c4ae",
+      "ano": "2023",
+      "curso": "Agronomia",
+      "numero_questao": 1,
+      "pagina": "2",
+      "categoria": "ruido_rascunho",
+      "observacoes": "Enunciado e itens a) e b) presentes. A extração incluiu indevidamente o cabeçalho RASCUNHO e a numeração das linhas da área de resposta. Necessária limpeza desse conteúdo. Classificação como discursiva correta."
+    },
+    {
+      "id": "0997b1cf6508df677d60dbf89c98847a0dfd094524002e579b36fdb3ef44b0cf",
+      "ano": "2023",
+      "curso": "Agronomia",
+      "numero_questao": 2,
+      "pagina": "12",
+      "categoria": "ruido_rascunho",
+      "observacoes": "Enunciado e itens a) e b) preservados corretamente. Entretanto, a extração incluiu indevidamente o cabeçalho RASCUNHO e a numeração das linhas destinadas à resposta. Necessária limpeza desses elementos. Classificação como discursiva correta."
+    },
+    {
+      "id": "e282d86f28659796118a0cc0b75aca4976c916266a0890d9f9e73c6120018a90",
+      "ano": "2023",
+      "curso": "Agronomia",
+      "numero_questao": 26,
+      "pagina": "24",
+      "categoria": "visual_ou_outro",
+      "observacoes": "Questão 26 conferida com o PDF oficial, página 24. Texto-base, valores numéricos e afirmações I, II e III recuperados. Entretanto, a tabela perdeu sua estrutura de linhas e colunas, comprometendo a associação dos dados por tratamento, nutriente e ano. Identificado também caractere indevido na legenda. Necessária conversão da tabela para formato estruturado, preferencialmente Markdown. Classificação como objetiva correta."
+    },
+    {
+      "id": "349e7e6bd86114ef8079c9ed698246582307fc5985e8b9b706b7cbc3bb408bda",
+      "ano": "2023",
+      "curso": "Agronomia",
+      "numero_questao": 32,
+      "pagina": "30",
+      "categoria": "visual_ou_outro",
+      "observacoes": "O enunciado e as alternativas foram preservados, porém o gráfico de distribuição da captação de água perdeu sua organização visual na extração textual. Necessária representação estruturada dos setores e percentuais, mantendo a imagem original associada à questão."
+    },
+    {
+      "id": "f4908cfa17d5fa0f5db930ba28f9c0c6420a554421d68797269715e03c93b921",
+      "ano": "2023",
+      "curso": "Agronomia",
+      "numero_questao": 3,
+      "pagina": "5",
+      "categoria": "visual_ou_outro",
+      "observacoes": "Questão 3 conferida com o PDF oficial, página 5. Texto principal e alternativas preservados, porém o gráfico de vacinação infantil foi extraído como texto linear, sem manter a associação entre imunizantes, anos, metas e percentuais. Identificados também erros de espaçamento e codificação de palavras. Necessária conversão do gráfico para representação estruturada e correção textual, preservando a imagem original. Classificação como objetiva correta."
+    },
+    {
+      "id": "59a161e1e035d2e8156713e16722710adceb7b475011e3f3421d973490ea6c81",
+      "ano": "2023",
+      "curso": "Arquitetura e Urbanismo",
+      "numero_questao": 17,
+      "pagina": "22",
+      "categoria": "visual_ou_outro",
+      "observacoes": "Questão 17 conferida com o PDF oficial, página 22. O texto principal foi recuperado, porém os desenhos arquitetônicos, especialmente a planta do pavimento superior e a fachada, não possuem representação estruturada suficiente no enunciado extraído. Necessário preservar as imagens associadas à questão e suas referências. Alternativas A–E e classificação como objetiva corretas."
+    },
+    {
+      "id": "470111790def10cab3a9100e62b5c02697947b912e3cbd8f391504ea0e8dc15b",
+      "ano": "2023",
+      "curso": "Arquitetura e Urbanismo",
+      "numero_questao": 29,
+      "pagina": "35",
+      "categoria": "visual_ou_outro",
+      "observacoes": "Questão 29 conferida com o PDF oficial, página 35. O texto principal e as alternativas foram extraídos, porém o esquema visual de transmissão acústica não foi preservado de forma adequada no enunciado extraído, sendo convertido apenas em rótulos textuais soltos, sem manter a relação gráfica entre os elementos. Como a interpretação da questão depende do diagrama, o enunciado deve ser considerado incompleto por falha de representação visual. Alternativas e classificação como questão objetiva corretas."
+    },
+    {
+      "id": "c6623b2bad1a29d50a0c4e9c4bb3a1da658086397292291c192acfbb66886a6b",
+      "ano": "2023",
+      "curso": "Agronomia",
+      "numero_questao": 5,
+      "pagina": "7",
+      "categoria": "visual_ou_outro",
+      "observacoes": "Questão 5 conferida com o PDF oficial, página 7. O texto principal foi recuperado, porém a tabela ilustrada sobre mobilidade urbana perdeu sua organização visual. As percepções das participantes não ficaram claramente associadas aos respectivos meios de transporte. Necessário estruturar os dados e preservar os ícones e a imagem original. Classificação como objetiva correta."
+    },
+    {
+      "id": "3e8051b7524c248834207f67685bb9155a176eb699b6cebe8e699eab4aab6ccc",
+      "ano": "2023",
+      "curso": "Arquitetura e Urbanismo",
+      "numero_questao": 11,
+      "pagina": "15",
+      "categoria": "visual_ou_outro",
+      "observacoes": "O texto principal foi recuperado, mas a planta de cobertura necessita de representação visual adequada. As cinco alternativas gráficas foram identificadas e conferidas, devendo permanecer associadas às respectivas imagens. Classificação como questão objetiva correta."
+    },
+    {
+      "id": "f249a4d6587d968b68fdd67e8117108db26c54afd757df2413e0399e6c2e636b",
+      "ano": "2023",
+      "curso": "Agronomia",
+      "numero_questao": 31,
+      "pagina": "29",
+      "categoria": "visual_ou_outro",
+      "observacoes": "Questão 31 conferida com o PDF oficial, página 29. O texto principal e as alternativas foram preservados, porém o gráfico das fases de germinação foi extraído como texto linear, perdendo a representação da curva e as relações entre fases, conteúdo de água e tolerância à dessecação. Necessária representação estruturada do gráfico, mantendo a imagem original associada à questão. Classificação como objetiva correta."
+    }
+  ],
+  "observacoes": [
+    "Avaliação humana da amostra de 2023: não valida os 280 registros completos.",
+    "Alternativas de questões discursivas são não aplicáveis, não pendentes.",
+    "Referência a PNG de página não comprova conversão semântica do elemento visual.",
+    "Nota de auditoria original é imutável; correções exigem nova avaliação."
+  ],
+  "derivado_criado": "data\\extraidos_auditados_2023\\questoes.jsonl",
+  "sha256_derivado": "5ecc9c3f93a12209d4bac2641e3b242e64116005a0a21d4b904fbeb6451f661f",
+  "rascunhos_corrigidos_no_derivado": 2,
+  "aviso_derivado": "Rascunhos limpos em versão separada; 8 pendências visuais permanecem. Não reindexado."
+}
