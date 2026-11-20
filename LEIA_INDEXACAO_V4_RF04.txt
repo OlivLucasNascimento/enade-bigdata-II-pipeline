@@ -1,0 +1,12 @@
+ENADE Big Data II - indice v4 (RF04)
+
+1) Extrair ZIP NA RAIZ do clone GitHub, em uma branch nova vinda de main.
+2) Executar: py -m pytest -q
+3) Registrar nova aprovacao editorial das 8 representacoes RF04: veja docs/INDEXACAO_V4_RF04.md.
+4) Executar preflight (sem modificar Kafka/ES).
+5) Com Docker local ativo, executar e verificar.
+6) Confirmar contagem 280, 0 IDs divergentes/faltantes, e hashes v1/v2/v3 identicos.
+7) Versionar APENAS scripts, testes, docs e evidencias em PR (nao publicar JSONL, imagens ou PDF).
+
+NUNCA sobrescreve v3 e NUNCA atualiza status global das 280 questoes para aprovado.
+A API da equipe deve optar explicitamente pelo novo indice e servir imagens mediante configuracao propria.

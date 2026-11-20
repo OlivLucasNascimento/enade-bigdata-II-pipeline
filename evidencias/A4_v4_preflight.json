@@ -1,0 +1,34 @@
+{
+  "aprovacao_sha256": "d5fd885863937d8f1bb1ea6882723a2329f50b4a550dc16197d0df8137d37610",
+  "auditoria_historica_alterada": false,
+  "avisos": [
+    "2017/2021 ainda exigem revisao editorial",
+    "Imagens sao arquivos locais; Elasticsearch guarda referencias, nao o binario dos PNGs",
+    "Nao altera indice v1/v2/v3 nem o CSV original"
+  ],
+  "escopo_aprovacao": "apenas_as_8_representacoes_semanticas",
+  "fontes_sha256": {
+    "data/extraidos/questoes_com_midias.jsonl": "e5025350ea9b39d54346fe794d71a8c84e3600537b4754042f5114cd257fdd4a",
+    "data/extraidos_2017_2021_corrigidos/questoes.jsonl": "12a71cfbb242e5de0c3d06666e9077219720599ba77c4ecc93623b0cbdea7b02",
+    "data/extraidos_auditados_2023/questoes.jsonl": "5ecc9c3f93a12209d4bac2641e3b242e64116005a0a21d4b904fbeb6451f661f",
+    "data/extraidos_auditados_2023/questoes_semantica_rf04.jsonl": "51a4b8465a8b35f82f6928357feaf079adca6c6c2de998f0c34a6c479104a629",
+    "docs/RF04_TRANSCRICOES_ESTRUTURADAS.json": "5c2b4aeb32f24a4285a91f4e0d8df1894ad9ba2f8762151fa394fb315da2593e",
+    "evidencias/A3_revisao_manual.csv": "c8ca6b3d926e3a5e5be1478cc24ab2b71fd2cc200946b21acfe6a5829ccf92fe"
+  },
+  "ids_unicos": 280,
+  "indice": "enade-questoes-v4",
+  "jsonl_v4": "data/extraidos_280_v4/questoes.jsonl",
+  "kerberos": "NAO_IMPLEMENTADO",
+  "por_ano": {
+    "2017": 80,
+    "2021": 120,
+    "2023": 80
+  },
+  "rascunhos_discursivos_limpos": 2,
+  "representacoes_semanticas_aprovadas": 8,
+  "resultado": "PREFLIGHT_APROVADO_PARA_INDICE_NOVO",
+  "sha256_jsonl_v4": "5d1d00c8b4fdb656764294abbe05d5fb9d1d5fde65b4d19e9b626715556abef1",
+  "status_global_280": "RASCUNHO_TECNICO",
+  "topico": "enade.questoes.v4",
+  "total": 280
+}
