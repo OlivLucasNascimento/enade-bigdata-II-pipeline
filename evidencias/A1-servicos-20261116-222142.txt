@@ -1,0 +1,23 @@
+﻿Data: 2026-11-16 22:21:42 -03:00
+Docker: Docker version 29.7.2, build a7dcaa6
+Compose: Docker Compose version v5.4.0
+
+Containers:
+NAME                                IMAGE                                                  COMMAND                  SERVICE         CREATED         STATUS                   PORTS
+enade-big-data-ii-elasticsearch-1   docker.elastic.co/elasticsearch/elasticsearch:8.17.0   "/bin/tini -- /usr/lÔÇª"   elasticsearch   9 minutes ago   Up 9 minutes (healthy)   127.0.0.1:9200->9200/tcp
+enade-big-data-ii-kafka-1           apache/kafka:3.9.1                                     "/__cacert_entrypoinÔÇª"   kafka           9 minutes ago   Up 9 minutes (healthy)   127.0.0.1:29092->29092/tcp
+enade-big-data-ii-redis-1           redis:7.4-alpine                                       "docker-entrypoint.sÔÇª"   redis           9 minutes ago   Up 9 minutes (healthy)   127.0.0.1:6379->6379/tcp
+
+Topicos Kafka:
+enade.dlq
+enade.questoes
+
+Elastic:
+{
+    "cluster_name":  "docker-cluster",
+    "status":  "green",
+    "number_of_nodes":  1
+}
+
+Redis:
+PONG

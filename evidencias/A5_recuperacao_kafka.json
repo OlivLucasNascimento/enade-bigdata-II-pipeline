@@ -1,0 +1,9 @@
+﻿{
+    "requisito":  "RF09",
+    "teste":  "Recuperacao apos reinicio do Kafka",
+    "mensagens_recuperadas":  2,
+    "documentos_antes":  10,
+    "documentos_depois":  10,
+    "resultado":  "Reinicio do broker validado",
+    "data":  "2026-11-18T20:57:22.9174084-03:00"
+}

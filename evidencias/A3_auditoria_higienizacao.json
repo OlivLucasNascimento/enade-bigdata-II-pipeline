@@ -1,0 +1,11 @@
+{
+  "registros_brutos": 80,
+  "registros_higienizados": 80,
+  "ids_e_ordem_inalterados": true,
+  "questoes_com_marca_no_bruto": 72,
+  "questoes_afetadas": 72,
+  "marcas_removidas": 2698,
+  "marcas_residuais_identificadas": 0,
+  "revisao_humana": "PENDENTE",
+  "status": "aprovado_tecnicamente_pendente_revisao_humana"
+}
