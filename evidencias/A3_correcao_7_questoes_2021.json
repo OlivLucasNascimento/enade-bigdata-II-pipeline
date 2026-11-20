@@ -1,0 +1,80 @@
+{
+  "resultado": "CORRIGIDO_SEM_REVISAO_HUMANA",
+  "registros": 200,
+  "ids_unicos": 200,
+  "alvos": 7,
+  "enunciados_vazios_depois": 0,
+  "alterados": 7,
+  "idempotente": false,
+  "sha256_anterior": "ec0d44c949fc31dde2644c9bf00d5e60d8bbfb43d5595e919a2a7baa36421e3c",
+  "pdfs_sha256_verificados": 3,
+  "detalhes": [
+    {
+      "id": "9d5eca53399cb2d077feb81476cc997f7368545173f40b8e098831f1b86db003",
+      "curso": "Ciência da computação (bacharelado)",
+      "questao": 9,
+      "pagina": 19,
+      "alternativas": 5,
+      "enunciado_caracteres": 838,
+      "sha256_pdf": "0254b274cc4adddbb503cf18553ee70c26014cbb0848fe3c5b787c80137b11e8"
+    },
+    {
+      "id": "ffd0dbd3dfe963ed37d3d8183e8da98e2b1136c1844d3bcaa6348fd88041dff7",
+      "curso": "Ciência da computação (licenciatura)",
+      "questao": 9,
+      "pagina": 18,
+      "alternativas": 5,
+      "enunciado_caracteres": 838,
+      "sha256_pdf": "9537deb2d2d7f7e00eacd526a06b887e932fedf4b5e7abf9be6501138d561b72"
+    },
+    {
+      "id": "2afb7c094d6049638b322887d05abbc189ffa89d9a26de3c0877c3a2730a2889",
+      "curso": "Ciência da computação (licenciatura)",
+      "questao": 26,
+      "pagina": 33,
+      "alternativas": 5,
+      "enunciado_caracteres": 1584,
+      "sha256_pdf": "9537deb2d2d7f7e00eacd526a06b887e932fedf4b5e7abf9be6501138d561b72"
+    },
+    {
+      "id": "64c787cdf2a19837834682f8fd0d1ca1de248491b0e25eff347aa62d70664715",
+      "curso": "Ciência da computação (licenciatura)",
+      "questao": 29,
+      "pagina": 35,
+      "alternativas": 5,
+      "enunciado_caracteres": 1327,
+      "sha256_pdf": "9537deb2d2d7f7e00eacd526a06b887e932fedf4b5e7abf9be6501138d561b72"
+    },
+    {
+      "id": "2cc5aa43bd70ca61d978d86f14c058e1237b1ede3719060e7777cd6c64a452a4",
+      "curso": "Ciência da computação (licenciatura)",
+      "questao": 31,
+      "pagina": 36,
+      "alternativas": 5,
+      "enunciado_caracteres": 1416,
+      "sha256_pdf": "9537deb2d2d7f7e00eacd526a06b887e932fedf4b5e7abf9be6501138d561b72"
+    },
+    {
+      "id": "455d31a86f5f0f8097ef64d45d461d0b62efae3aa7c1d13cd4c2518137188118",
+      "curso": "Sistemas de informação (bacharelado)",
+      "questao": 11,
+      "pagina": 19,
+      "alternativas": 5,
+      "enunciado_caracteres": 1310,
+      "sha256_pdf": "13d81a46488d93fb66836e7c704f9de1ba722c3b130ccb4f0aa9d3522c855ba7"
+    },
+    {
+      "id": "a72d5e84f3ebfea4ce5b336002bdf4f536cebda4445e22910b0948e80d127d88",
+      "curso": "Sistemas de informação (bacharelado)",
+      "questao": 13,
+      "pagina": 20,
+      "alternativas": 5,
+      "enunciado_caracteres": 1542,
+      "sha256_pdf": "13d81a46488d93fb66836e7c704f9de1ba722c3b130ccb4f0aa9d3522c855ba7"
+    }
+  ],
+  "revisao_humana": "PENDENTE",
+  "observacao": "Recupera somente texto PDF e alternativas A-E, sem garantir revisao editorial ou semantica.",
+  "backup": "C:\\Users\\Lucas\\OneDrive\\Área de Trabalho\\ENADE BigData II Projeto\\data\\extraidos_2017_2021_corrigidos\\questoes_antes_7_corr_2021_ec0d44c949fc31dd.jsonl",
+  "sha256_depois": "12a71cfbb242e5de0c3d06666e9077219720599ba77c4ecc93623b0cbdea7b02"
+}

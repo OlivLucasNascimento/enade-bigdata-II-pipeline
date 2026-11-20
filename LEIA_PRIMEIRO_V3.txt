@@ -1,0 +1,22 @@
+ENADE - Indexacao v3 de 280 questoes
+
+APLICAR NO REPOSITORIO: enade-bigdata-II-pipeline
+Os arquivos locais originais de dados NAO sao incluidos. O projeto original deve estar
+na pasta irma "ENADE BigData II Projeto".
+
+No terminal do VS Code dentro de enade-bigdata-II-pipeline:
+
+1) Expand-Archive -LiteralPath "$env:USERPROFILE\Downloads\ENADE_INDEXACAO_V3_SEGURA.zip" -DestinationPath . -Force
+2) py -m pytest -q
+3) py .\scripts\indexar_v3.py preflight
+
+Se preflight informar 280 registros e 280 IDs, executar:
+4) py .\scripts\indexar_v3.py executar
+
+Um indice Kafka/Elastic NOVO sera criado: enade.questoes.v3 / enade-questoes-v3
+Nao apaga ou modifica os indices v1 e v2, nem declara validacao humana.
+Os resultados ficam em evidencias/A4_v3_preflight.json e A4_v3_verificacao.json.
+Os 280 registros consolidados sao gravados apenas no projeto original (pasta data/).
+NAO criar commit/push antes de validar v3.
+
+Se seus dados estiverem em local diferente, use --origem "C:\\caminho\\do\\projeto".
