@@ -1,0 +1,29 @@
+{
+  "requisito": "RF11",
+  "resultado": "APROVADO",
+  "topico_teste": "enade.rf11.v3.validacao.0817338f612e",
+  "dlq_teste": "enade.rf11.v3.dlq.0817338f612e",
+  "indice_teste": "enade-rf11-v3-teste-0817338f612e",
+  "eventos_enviados": 3,
+  "invalidos_na_dlq": 2,
+  "validos_indexados": 1,
+  "resultados": [
+    "dlq",
+    "dlq",
+    "indexado"
+  ],
+  "dlq_com_motivo_payload_e_offset": true,
+  "indices_principais_antes": {
+    "enade-questoes-v1": 10,
+    "enade-questoes-v2": 80,
+    "enade-questoes-v3": 280
+  },
+  "indices_principais_depois": {
+    "enade-questoes-v1": 10,
+    "enade-questoes-v2": 80,
+    "enade-questoes-v3": 280
+  },
+  "topico_prod_v3_alterado": false,
+  "indice_prod_v3_alterado": false,
+  "nota": "Teste real local sem Kerberos. Indices/topicos isolados preservados para evidencias."
+}
