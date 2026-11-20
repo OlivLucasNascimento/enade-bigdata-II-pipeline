@@ -1,0 +1,120 @@
+{
+  "versao": 1,
+  "proveniencia": "Transcrição técnica assistida com base nas páginas das provas oficiais ENADE 2023. RASCUNHO: requer validação humana de cada representação. Não altera notas de auditoria.",
+  "questoes": [
+    {
+      "curso": "Agronomia", "numero_questao": 3, "pagina_pdf": 5,
+      "titulo": "Cobertura vacinal em crianças menores de 1 ano (2017–2021)",
+      "tipo_representacao": "tabela",
+      "colunas": ["Imunizante", "Meta", "2017", "2018", "2019", "2020", "2021"],
+      "linhas": [
+        ["BCG", "90%", "97,98%", "99,72%", "86,67%", "74,03%", "65,93%"],
+        ["Tríplice Viral D1", "95%", "86,24%", "92,61%", "93,12%", "79,57%", "70,94%"],
+        ["Tríplice Viral D2", "95%", "72,94%", "76,89%", "81,55%", "62,82%", "49,62%"],
+        ["Tetraviral (SRC+VZ)", "95%", "35,44%", "33,26%", "34,24%", "20,71%", "5,70%"],
+        ["Poliomielite", "95%", "84,24%", "89,54%", "84,19%", "76,05%", "67,13%"],
+        ["Febre Amarela", "95%", "47,37%", "59,50%", "62,41%", "57,20%", "55,56%"],
+        ["Hepatite A", "95%", "78,94%", "82,69%", "85,02%", "75,02%", "64,50%"]
+      ],
+      "observacao": "Percentuais transcritos por cor e ano a partir das barras do gráfico. A fonte visual original deve continuar disponível. Pequenas distorções de espaçamento do texto extraído não foram corrigidas nesta etapa."
+    },
+    {
+      "curso": "Agronomia", "numero_questao": 5, "pagina_pdf": 7,
+      "titulo": "Percepções das mulheres sobre mobilidade urbana",
+      "tipo_representacao": "tabela",
+      "colunas": ["Modalidade/situação", "Expressões apresentadas no infográfico"],
+      "linhas": [
+        ["Ando a pé", "Atenta; Cansada; Insegura; Ansiosa"],
+        ["Pego o ônibus", "Desconfortável; Insegura; Péssima"],
+        ["Ando de bicicleta", "Não ando; Livre"],
+        ["Ando de metrô", "Atenta aos assédios; Observada; Desconfiada; Um pouco mais segura"],
+        ["Ando de trem", "Em pânico; Apertada"],
+        ["Frequento o espaço público", "Nem fico, tenho medo; Passo correndo; Em alerta"]
+      ],
+      "observacao": "Correspondência entre cada ícone/modalidade e as percepções representadas em seu quadrante; mantida a imagem com destaques gráficos."
+    },
+    {
+      "curso": "Agronomia", "numero_questao": 26, "pagina_pdf": 24,
+      "titulo": "Milho consorciado: teores de nutrientes por tratamento e safra",
+      "tipo_representacao": "tabela",
+      "colunas": ["Tratamento", "N 2013/14 (g/kg)", "N 2015/16 (g/kg)", "P 2013/14 (g/kg)", "P 2015/16 (g/kg)", "K 2013/14 (g/kg)", "K 2015/16 (g/kg)"],
+      "linhas": [
+        ["Milho solteiro", "6,05 b", "8,85 b", "0,78 b", "1,00 c", "6,25 b", "8,18 ab"],
+        ["Milho+C sp", "8,36 ab", "12,68 a", "1,60 a", "2,08 a", "10,25 a", "8,13 ab"],
+        ["Milho+Gua", "8,85 ab", "13,80 a", "1,70 a", "1,60 ab", "9,50 a", "8,50 ab"],
+        ["Milho+F p", "9,37 a", "12,73 a", "1,55 a", "1,25 bc", "9,63 a", "7,90 b"],
+        ["Milho+Uroch", "7,47 ab", "10,70 ab", "1,45 a", "1,60 ab", "10,50 a", "10,88 a"],
+        ["F", "3,26 *", "7,18 *", "8,19 *", "14,41 **", "7,45 **", "3,42 *"],
+        ["CV", "18,01", "12,51", "18,22", "14,25", "13,62", "15,22"]
+      ],
+      "observacao": "Notas originais: C sp = Crotalaria spectabilis; Gua = guandu; F p = feijão-de-porco; Uroch = Urochloa ruziziensis. Letras de Tukey, asteriscos de significância e CV foram preservados; conferir a legenda integral no PDF."
+    },
+    {
+      "curso": "Agronomia", "numero_questao": 31, "pagina_pdf": 29,
+      "titulo": "Curva de absorção de água nas três fases da germinação",
+      "tipo_representacao": "fases",
+      "colunas": ["Fase", "Fenômeno", "Comportamento da curva", "Tolerância à dessecação no diagrama"],
+      "linhas": [
+        ["I", "Embebição", "Rápido aumento inicial do conteúdo de água", "Tolerante"],
+        ["II", "Ativação metabólica", "Patamar com aumento discreto do conteúdo de água", "Tolerante"],
+        ["III", "Crescimento", "Novo aumento progressivo do conteúdo de água", "Intolerante"]
+      ],
+      "observacao": "Curva esquemática e não uma série de medições numéricas. Eixo vertical: conteúdo de água (% do peso fresco); horizontal: tempo de embebição. Não interpolar pontos numéricos a partir do desenho."
+    },
+    {
+      "curso": "Agronomia", "numero_questao": 32, "pagina_pdf": 30,
+      "titulo": "Demanda de captação de água no Brasil (2019)",
+      "tipo_representacao": "tabela",
+      "colunas": ["Setor", "Percentual do total"],
+      "linhas": [
+        ["Irrigação", "49,8%"],
+        ["Humano urbano", "24,3%"],
+        ["Indústria", "9,7%"],
+        ["Uso animal", "8,4%"],
+        ["Termelétricas", "4,5%"],
+        ["Mineração", "1,7%"],
+        ["Humano rural", "1,6%"]
+      ],
+      "observacao": "Total indicado no infográfico: aproximadamente 65 trilhões de litros ao ano. Valores percentuais somam 100,0%."
+    },
+    {
+      "curso": "Arquitetura e Urbanismo", "numero_questao": 11, "pagina_pdf": 15,
+      "titulo": "Planta de cobertura do telhado e alternativas exclusivamente gráficas",
+      "tipo_representacao": "alternativas_graficas",
+      "colunas": ["Alternativa", "Vista indicada", "Representação"],
+      "linhas": [
+        ["A", "Leste", "Imagem da elevação A vinculada ao registro"],
+        ["B", "Oeste", "Imagem da elevação B vinculada ao registro"],
+        ["C", "Oeste", "Imagem da elevação C vinculada ao registro"],
+        ["D", "Oeste", "Imagem da elevação D vinculada ao registro"],
+        ["E", "Leste", "Imagem da elevação E vinculada ao registro"]
+      ],
+      "observacao": "A planta do telhado é o elemento visual de referência. As cinco alternativas são desenhos distintos, não substituíveis por sua letra; a imagem individual de cada alternativa deve ser exibida. Não foi feita interpretação arquitetônica para escolher gabarito."
+    },
+    {
+      "curso": "Arquitetura e Urbanismo", "numero_questao": 17, "pagina_pdf": 22,
+      "titulo": "Residência Rubens/Cristina: plantas e fachada",
+      "tipo_representacao": "desenhos_tecnicos",
+      "colunas": ["Elemento", "Localização/descrição"],
+      "linhas": [
+        ["Planta do pavimento superior", "Desenho técnico da residência no conjunto de páginas associado ao registro"],
+        ["Fachada norte", "Elevação arquitetônica identificada no material gráfico"],
+        ["Continuação visual", "O registro tem imagens das páginas 22 e 23; ambas devem permanecer acessíveis"]
+      ],
+      "observacao": "Desenhos técnicos não são convertidos fielmente apenas por descrição textual. A apresentação deve combinar o texto e as imagens completas das páginas 22 e 23."
+    },
+    {
+      "curso": "Arquitetura e Urbanismo", "numero_questao": 29, "pagina_pdf": 35,
+      "titulo": "Transmissão acústica entre dois meios",
+      "tipo_representacao": "relacoes",
+      "colunas": ["Elemento", "Origem/destino no diagrama"],
+      "linhas": [
+        ["Som incidente", "Propaga-se no meio 1 em direção à superfície de separação"],
+        ["Reflexão", "Retorna ao meio 1 a partir da superfície"],
+        ["Transmissão", "Atravessa a superfície e continua no meio 2"],
+        ["Absorção", "Representada na região da superfície de separação"]
+      ],
+      "observacao": "Relações espaciais entre os dois meios e o obstáculo são recuperadas em texto; preservar o diagrama original com cores e setas para confirmar a geometria dos vetores."
+    }
+  ]
+}
