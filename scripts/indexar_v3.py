@@ -10,6 +10,8 @@ Sempre em status rascunho: indexação técnica não substitui revisão humana.
 from __future__ import annotations
 
 import argparse
+import base64
+import datetime as dt
 import copy
 import hashlib
 import json
@@ -26,6 +28,7 @@ from enade_pipeline.integracao import MAPPING, encode, validar_questao
 
 INDEX = 'enade-questoes-v3'
 TOPIC = 'enade.questoes.v3'
+DLQ_TOPIC = 'enade.questoes.v3.dlq'
 BASE_ORIGEM = ROOT.parent / 'ENADE BigData II Projeto'
 INPUTS = (
     ('2023', Path('data/extraidos/questoes_com_midias.jsonl'), 80),
@@ -135,15 +138,71 @@ def elastic_client(url: str):
     return es
 
 
+def ensure_topic(admin, name: str, partitions: int):
+    """Cria um topico ausente; nao recria nem altera topicos existentes."""
+    from kafka.admin import NewTopic
+    from kafka.errors import TopicAlreadyExistsError
+    try:
+        admin.create_topics([NewTopic(name=name, num_partitions=partitions, replication_factor=1)])
+    except TopicAlreadyExistsError:
+        pass
+
+
+def configure_dlq(kafka_url: str):
+    """Prepara somente a DLQ v3, sem republicar as 280 questoes."""
+    from kafka.admin import KafkaAdminClient
+    admin = KafkaAdminClient(bootstrap_servers=kafka_url, client_id='enade-v3-dlq-setup', request_timeout_ms=30000)
+    try:
+        ensure_topic(admin, DLQ_TOPIC, 1)
+    finally:
+        admin.close()
+    print(f'DLQ configurada: {DLQ_TOPIC} (sem modificar os indices)')
+
+
+def process_message(event, *, es, dlq_producer, commit_offset,
+                    index: str = INDEX, dlq_topic: str = DLQ_TOPIC):
+    """Processa um evento e so confirma offset apos ES ou ACK de DLQ.
+
+    Erros de esquema/JSON seguem para DLQ. Falhas de infraestrutura
+    (Elasticsearch, publicacao na DLQ, commit) sao propagadas: nao ha
+    confirmacao antecipada e o Kafka pode reentregar a mensagem.
+    """
+    raw = event.value
+    try:
+        q = validar_questao(json.loads(raw.decode('utf-8')))
+        if q.get('status_validacao') != 'nao_revisada' or q.get('revisado_humanamente') is not False:
+            raise ValueError('evento sem classificacao rascunho segura')
+    except (ValueError, UnicodeDecodeError, json.JSONDecodeError, TypeError) as exc:
+        # Preservar os bytes do evento permite examinar/reprocessar o original.
+        content_sha = hashlib.sha256(raw).hexdigest()
+        envelope = {
+            'erro_tipo': type(exc).__name__,
+            'erro': str(exc)[:600],
+            'evento_sha256': content_sha,
+            'evento_base64': base64.b64encode(raw).decode('ascii'),
+            'origem': {'topico': event.topic, 'particao': event.partition,
+                       'offset': event.offset},
+            'registrado_em_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
+            'status': 'invalido',
+        }
+        # get espera ACK real, acks='all' no producer. Se falhar, NAO confirma offset.
+        dlq_producer.send(dlq_topic, key=content_sha.encode('ascii'),
+                          value=encode(envelope)).get(timeout=45)
+        commit_offset(event)
+        return 'dlq'
+    # Falha de ES nao e erro de dados. Nao enviar a DLQ nem confirmar offset.
+    es.index(index=index, id=q['id'], document=q)
+    commit_offset(event)
+    return 'indexado'
+
+
 def setup(kafka_url: str, es):
     from kafka.admin import KafkaAdminClient, NewTopic
     from kafka.errors import TopicAlreadyExistsError
     admin = KafkaAdminClient(bootstrap_servers=kafka_url, client_id='enade-v3-setup', request_timeout_ms=30000)
     try:
-        try:
-            admin.create_topics([NewTopic(name=TOPIC, num_partitions=3, replication_factor=1)])
-        except TopicAlreadyExistsError:
-            pass
+        ensure_topic(admin, TOPIC, 3)
+        ensure_topic(admin, DLQ_TOPIC, 1)
     finally:
         admin.close()
     if not es.indices.exists(index=INDEX):
@@ -186,37 +245,43 @@ def compare(es, items: list[dict]):
 
 
 def consume(kafka_url: str, es, items: list[dict], timeout: int = 120):
-    from kafka import KafkaConsumer, TopicPartition
+    from kafka import KafkaConsumer, KafkaProducer, TopicPartition
     from kafka.structs import OffsetAndMetadata
     # Grupo atrelado ao corpus, evita colisoes com v1/v2.
     checksum = hashlib.sha256('|'.join(sorted(q['id'] for q in items)).encode('ascii')).hexdigest()[:12]
     group = f'enade-indexador-v3-{checksum}'
     c = KafkaConsumer(TOPIC, bootstrap_servers=kafka_url, group_id=group,
                       enable_auto_commit=False, auto_offset_reset='earliest', max_poll_records=100)
-    consumed = 0
+    dlq_producer = KafkaProducer(bootstrap_servers=kafka_url, acks='all', retries=4,
+                                 max_in_flight_requests_per_connection=1,
+                                 request_timeout_ms=30000)
+    counts = {'indexado': 0, 'dlq': 0}
     end = time.monotonic() + timeout
+
+    def commit_offset(event):
+        c.commit(offsets={TopicPartition(event.topic, event.partition):
+                          OffsetAndMetadata(event.offset + 1, '', -1)})
+
     try:
         while time.monotonic() < end:
             batches = c.poll(timeout_ms=1000, max_records=100)
             for tp, msgs in batches.items():
                 for event in msgs:
-                    q = validar_questao(json.loads(event.value.decode('utf-8')))
-                    if q.get('status_validacao') != 'nao_revisada' or q.get('revisado_humanamente') is not False:
-                        raise ValueError('Evento v3 sem classificacao rascunho segura')
-                    es.index(index=INDEX, id=q['id'], document=q)
-                    c.commit(offsets={TopicPartition(event.topic, event.partition):
-                                      OffsetAndMetadata(event.offset+1, '', -1)})
-                    consumed += 1
+                    result = process_message(event, es=es, dlq_producer=dlq_producer,
+                                             commit_offset=commit_offset)
+                    counts[result] += 1
             if not batches:
                 es.indices.refresh(index=INDEX)
                 _, missing, outdated = compare(es, items)
                 if not missing and not outdated:
                     break
         es.indices.refresh(index=INDEX)
-        print(f'Eventos consumidos nesta execucao: {consumed}')
+        print('Eventos processados nesta execucao: '
+              f'indexados={counts["indexado"]}, DLQ={counts["dlq"]}')
     finally:
         c.close()
-    return consumed
+        dlq_producer.close(timeout=15)
+    return counts
 
 
 def verify(es, items: list[dict], report: dict):
@@ -240,13 +305,16 @@ def verify(es, items: list[dict], report: dict):
 
 def main():
     p = argparse.ArgumentParser(description='ENADE 280 questoes: preflight e indexacao v3 segura')
-    p.add_argument('acao', choices=('preflight', 'executar', 'verificar'))
+    p.add_argument('acao', choices=('preflight', 'executar', 'verificar', 'configurar-dlq'))
     p.add_argument('--origem', type=Path, default=BASE_ORIGEM, help='Pasta original com data/extraidos...')
     p.add_argument('--kafka', default='127.0.0.1:29092')
     p.add_argument('--elastic', default='http://127.0.0.1:9200')
     p.add_argument('--timeout', type=int, default=120)
     args = p.parse_args()
     try:
+        if args.acao == 'configurar-dlq':
+            configure_dlq(args.kafka)
+            return 0
         items, report = prepare(args.origem.resolve())
         print(json.dumps(report, ensure_ascii=False, indent=2))
         if args.acao == 'preflight':

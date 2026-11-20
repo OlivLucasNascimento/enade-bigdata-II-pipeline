@@ -1,0 +1,27 @@
+RF11 — DLQ v3 (patch incremental para a branch feat/rf11-dlq-v3)
+
+Inclui:
+ scripts/indexar_v3.py (substitui somente a versao v3 existente)
+ scripts/testar_rf11_v3.py (novo teste end-to-end isolado)
+ tests/test_rf11_dlq_v3.py (6 testes unitarios novos)
+ docs/RF11_DLQ_V3.md (documentacao)
+
+IMPORTANTE:
+- NAO executar 'indexar_v3.py executar' para testar a DLQ: esse comando republica os 280 eventos.
+- 'indexar_v3.py configurar-dlq' prepara apenas o topico DLQ na infraestrutura local.
+- 'testar_rf11_v3.py' usa topico/index exclusivos de teste, nao mexe nos 280 docs.
+- O teste real requer Docker Desktop com Kafka e Elasticsearch saudaveis.
+- Nao existe Kerberos no ambiente de teste; nao expor portas para a Internet.
+- Nenhum commit ou push ocorre automaticamente.
+
+Ordem recomendada:
+  1. Criar branch nova a partir de main limpa.
+  2. Expandir ZIP na raiz do repositorio.
+  3. 'py -m pytest -q'
+  4. 'docker compose up -d --wait kafka elasticsearch redis'
+  5. 'py .\scripts\indexar_v3.py configurar-dlq'
+  6. 'py .\scripts\testar_rf11_v3.py'
+  7. Conferir 'resultado: APROVADO' e 'evidencias/A5_rf11_v3_dlq.json'.
+
+NOTA: Testes unitarios novos passaram em ambiente isolado; a execucao real deve
+ser realizada no seu Windows antes de declarar o RF11 concluido.
