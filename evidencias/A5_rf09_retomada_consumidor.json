@@ -1,0 +1,16 @@
+{
+  "requisito": "RF09_RF10",
+  "resultado": "APROVADO",
+  "cenario": "falha apos indexar no Elasticsearch e antes de confirmar o offset Kafka",
+  "topico_teste": "enade.rf09.retomada.851f516309",
+  "indice_teste": "enade-rf09-851f516309",
+  "grupo_teste": "enade-rf09-grupo-851f516309",
+  "particao": 0,
+  "offset_original": 0,
+  "offset_reprocessado": 0,
+  "documentos_antes": 1,
+  "documentos_depois": 1,
+  "ids_preservados": true,
+  "data_utc": "2026-11-20T01:01:14.605969+00:00",
+  "observacao": "Teste isolado, sem Kerberos e sem apagar tópicos ou índices de produção."
+}

@@ -1,0 +1,15 @@
+{
+  "indice": "enade-questoes-v2",
+  "contagem_elasticsearch": 80,
+  "esperados": 80,
+  "ids_presentes": 80,
+  "ids_faltantes": 0,
+  "ids_com_conteudo_divergente": [],
+  "status_previstos": {
+    "nao_revisada": 80
+  },
+  "modo_rascunho": true,
+  "seguranca": "LABORATORIO_SEM_KERBEROS",
+  "aprovado_tecnicamente": true,
+  "aviso": "A indexação técnica não certifica qualidade editorial ou aprovação humana."
+}

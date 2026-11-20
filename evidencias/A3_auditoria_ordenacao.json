@@ -1,0 +1,17 @@
+{
+  "quantidade": 80,
+  "ids_unicos": 80,
+  "tipos": {
+    "discursiva": 4,
+    "objetiva": 76
+  },
+  "cursos": {
+    "Agronomia": 40,
+    "Arquitetura e Urbanismo": 40
+  },
+  "marcas_validin_restantes": 0,
+  "objetivas_sem_cinco_alternativas": 2,
+  "pendencias_tecnicas": 2,
+  "revisao_humana_50_questoes": "PENDENTE",
+  "status": "AUDITORIA_TECNICA_SEM_APROVACAO_EDITORIAL"
+}

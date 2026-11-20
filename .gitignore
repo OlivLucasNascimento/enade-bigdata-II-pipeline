@@ -1,0 +1,33 @@
+﻿# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Credenciais e arquivos privados
+.env
+.env.*
+!.env.example
+*.key
+*.keytab
+*.pem
+*.p12
+
+# Dados locais e PDFs
+data/
+*.pdf
+
+# Arquivos temporarios e pacotes
+*.zip
+*.log
+*.tmp
+
+# Ambientes locais
+.vscode/
+.idea/
+node_modules/
+
+# Volumes Docker
+volumes/
+docker-data/

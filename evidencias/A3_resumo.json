@@ -1,0 +1,19 @@
+{
+  "arquivos_processados": 2,
+  "questoes_encontradas": 80,
+  "pendencias_pdf": 3,
+  "segundos": 1.06,
+  "arquivos_por_segundo": 1.883,
+  "saida": "C:\\Users\\Lucas\\OneDrive\\Área de Trabalho\\ENADE_BigDataII_Etapa1_A1\\data\\extraidos\\questoes.jsonl",
+  "pendencias": "C:\\Users\\Lucas\\OneDrive\\Área de Trabalho\\ENADE_BigDataII_Etapa1_A1\\data\\extraidos\\pendencias.jsonl",
+  "saida_bruta": "C:\\Users\\Lucas\\OneDrive\\Área de Trabalho\\ENADE_BigDataII_Etapa1_A1\\data\\extraidos\\questoes_brutas.jsonl",
+  "auditoria_marcas": "C:\\Users\\Lucas\\OneDrive\\Área de Trabalho\\ENADE_BigDataII_Etapa1_A1\\data\\extraidos\\auditoria_marcas.jsonl",
+  "questoes_com_marca": 0,
+  "marcas_removidas": 0,
+  "marcas_residuais": 0,
+  "por_tipo": {
+    "discursiva": 4,
+    "objetiva": 76
+  },
+  "status": "rascunhos_higienizados_pendentes_validacao_humana"
+}
