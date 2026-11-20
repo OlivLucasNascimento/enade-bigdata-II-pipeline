@@ -1,0 +1,28 @@
+{
+  "resultado": "APROVADO",
+  "indice": "enade-questoes-v3",
+  "topico": "enade.questoes.v3",
+  "contagem": 280,
+  "ids_presentes": 280,
+  "ids_faltantes": 0,
+  "ids_divergentes": [],
+  "quantidade_divergentes": 0,
+  "situacao": "RASCUNHO_NAO_REVISADO",
+  "kerberos": "NAO_IMPLEMENTADO",
+  "preservacao": "Sem operacoes de escrita nos indices v1 e v2",
+  "fontes": [
+    {
+      "lote": "2023",
+      "arquivo": "data/extraidos/questoes_com_midias.jsonl",
+      "quantidade": 80,
+      "sha256": "e5025350ea9b39d54346fe794d71a8c84e3600537b4754042f5114cd257fdd4a"
+    },
+    {
+      "lote": "2017-2021",
+      "arquivo": "data/extraidos_2017_2021_corrigidos/questoes.jsonl",
+      "quantidade": 200,
+      "sha256": "12a71cfbb242e5de0c3d06666e9077219720599ba77c4ecc93623b0cbdea7b02"
+    }
+  ],
+  "sha256_280": "8fc4d21e9afa2539efa835b7bed631a3970ad3cb7691372438f86ba71d81a776"
+}

@@ -79,3 +79,26 @@ Para os passos detalhados e as restrições do laboratório, consulte `docs/` e 
 Os manifestos locais registram URLs oficiais, arquivos, SHA-256 e status dos downloads. A validação do lote corrigido está em `evidencias/A3_validacao_correcao_2017.json`, a confirmação da v2 em `evidencias/A4_v2_verificacao.json` e a retomada do consumidor em `evidencias/A5_rf09_retomada_consumidor.json`. Consulte `docs/STATUS_ENTREGA_A1_A5.md` e a matriz para critérios pendentes.
 
 Este repositório não inclui os PDFs públicos originais. Consulte os links catalogados a partir da [página oficial de provas e gabaritos do INEP](https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade/provas-e-gabaritos).
+
+## Atualizacao: indexacao v3
+
+A integracao tecnica do ENADE foi ampliada para 280 questoes:
+- 2017: 80 questoes.
+- 2021: 120 questoes.
+- 2023: 80 questoes.
+
+A correcao de sete enunciados de 2021 preservou os IDs dos registros.
+
+- Kafka: 280 eventos confirmados e consumidos no topico `enade.questoes.v3`.
+- Elasticsearch: 280 documentos no indice `enade-questoes-v3`.
+- Integridade: nenhum ID faltante ou conteudo divergente.
+- Testes automatizados: 66 aprovados.
+- Indices v1 e v2 preservados.
+
+Os dados permanecem em modo rascunho. A revisao humana,
+a validacao de elementos graficos e a autenticacao
+Kerberos ainda estao pendentes.
+
+Detalhes e evidencias:
+- `docs/CORRECAO_7_QUESTOES_2021.md`
+- `evidencias/A4_v3_verificacao.json`

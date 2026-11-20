@@ -1,0 +1,32 @@
+{
+  "resultado": "PREFLIGHT_OK_RASCUNHO",
+  "indice": "enade-questoes-v3",
+  "topico": "enade.questoes.v3",
+  "total": 280,
+  "ids_unicos": 280,
+  "por_ano": {
+    "2017": 80,
+    "2021": 120,
+    "2023": 80
+  },
+  "status_validacao": "nao_revisada",
+  "revisao_humana": "PENDENTE",
+  "fontes": [
+    {
+      "lote": "2023",
+      "arquivo": "data/extraidos/questoes_com_midias.jsonl",
+      "quantidade": 80,
+      "sha256": "e5025350ea9b39d54346fe794d71a8c84e3600537b4754042f5114cd257fdd4a"
+    },
+    {
+      "lote": "2017-2021",
+      "arquivo": "data/extraidos_2017_2021_corrigidos/questoes.jsonl",
+      "quantidade": 200,
+      "sha256": "12a71cfbb242e5de0c3d06666e9077219720599ba77c4ecc93623b0cbdea7b02"
+    }
+  ],
+  "dados_locais_incluidos_no_git": false,
+  "aviso": "Indexacao tecnica. Gabaritos, graficos e qualidade editorial exigem conferencia adicional.",
+  "arquivo_gerado": "data/extraidos_280_v3/questoes.jsonl",
+  "sha256_280": "8fc4d21e9afa2539efa835b7bed631a3970ad3cb7691372438f86ba71d81a776"
+}
