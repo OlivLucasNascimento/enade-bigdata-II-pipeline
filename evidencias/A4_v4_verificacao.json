@@ -1,0 +1,46 @@
+{
+  "comparacao_integral_documentos": true,
+  "contagem": 280,
+  "ids_faltantes": 0,
+  "ids_presentes": 280,
+  "indice": "enade-questoes-v4",
+  "indice_v1_v2_v3_preservados": true,
+  "kerberos": "NAO_IMPLEMENTADO",
+  "observacao": "Aprovacao apenas das oito representacoes RF04; 2017/2021 e outras validacoes seguem pendentes.",
+  "publicacao_consumo": {
+    "apenas_verificacao": true
+  },
+  "representacoes_rf04_conferidas": 8,
+  "resultado": "APROVADO",
+  "sha256_280": "5d1d00c8b4fdb656764294abbe05d5fb9d1d5fde65b4d19e9b626715556abef1",
+  "snapshot_anteriores_antes": {
+    "enade-questoes-v1": {
+      "count": 10,
+      "sha256_id_e_documento": "88e70a663d66b28e1fb5968ac6da73093df62aca629b2f5c3df572cee8d29824"
+    },
+    "enade-questoes-v2": {
+      "count": 80,
+      "sha256_id_e_documento": "554c625ec985cff97390ba71efb6b8a32fb7ea8d6d10b6eab08d039af723e055"
+    },
+    "enade-questoes-v3": {
+      "count": 280,
+      "sha256_id_e_documento": "78cef55f4ec6db11f816a351c8f4c051535f3596f282708555edb1252cca6cee"
+    }
+  },
+  "snapshot_anteriores_depois": {
+    "enade-questoes-v1": {
+      "count": 10,
+      "sha256_id_e_documento": "88e70a663d66b28e1fb5968ac6da73093df62aca629b2f5c3df572cee8d29824"
+    },
+    "enade-questoes-v2": {
+      "count": 80,
+      "sha256_id_e_documento": "554c625ec985cff97390ba71efb6b8a32fb7ea8d6d10b6eab08d039af723e055"
+    },
+    "enade-questoes-v3": {
+      "count": 280,
+      "sha256_id_e_documento": "78cef55f4ec6db11f816a351c8f4c051535f3596f282708555edb1252cca6cee"
+    }
+  },
+  "status_global": "RASCUNHO_TECNICO_FORA_DA_REVISAO_RF04",
+  "topico": "enade.questoes.v4"
+}

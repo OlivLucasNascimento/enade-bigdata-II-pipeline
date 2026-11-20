@@ -1,0 +1,15 @@
+{
+  "data_registro_utc": "2026-11-20T18:13:34.432581+00:00",
+  "declaracao": "8 questões conferidas e aprovadas",
+  "escopo": "OITO_REPRESENTACOES_SEMANTICAS_RF04_ENADE_2023",
+  "fonte_hashes": {
+    "data/extraidos_auditados_2023/questoes_semantica_rf04.jsonl": "51a4b8465a8b35f82f6928357feaf079adca6c6c2de998f0c34a6c479104a629",
+    "docs/RF04_TRANSCRICOES_ESTRUTURADAS.json": "5c2b4aeb32f24a4285a91f4e0d8df1894ad9ba2f8762151fa394fb315da2593e",
+    "evidencias/A3_revisao_manual.csv": "c8ca6b3d926e3a5e5be1478cc24ab2b71fd2cc200946b21acfe6a5829ccf92fe"
+  },
+  "observacao": "Aprovacao apenas da representacao semantica adicional de 8 questoes; nao certifica 280 questoes completas nem Kerberos.",
+  "origem_auditoria_50": "preservada_sem_alteracao",
+  "origem_declaracao": "confirmacao_explicita_do_usuario_na_conversa",
+  "outros_272_registros": "nao_aprovados_por_esta_declaracao",
+  "resultado": "APROVADO_PELO_REVISOR_EM_NOVA_CONFERENCIA"
+}
