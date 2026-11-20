@@ -1,0 +1,9 @@
+ENADE BIG DATA II — RF04: TRANSCRIÇÕES ESTRUTURADAS EM RASCUNHO
+
+Instale o ZIP na branch feat/rf04-semantica-2023 do clone GitHub.
+Execute os testes e depois:
+  py .\scripts\estruturar_semantica_rf04.py --base "$env:USERPROFILE\OneDrive\Área de Trabalho\ENADE BigData II Projeto"
+
+Abra data\visuais_rf04\semantica.html no PROJETO ORIGINAL.
+CONFIRA TODOS OS DADOS NO PDF: nenhuma questão é aprovada automaticamente.
+Não há alteração no CSV humano, PDFs, fontes, Kafka nem Elasticsearch.
